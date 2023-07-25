@@ -4,6 +4,7 @@
 * (optional) stow
 
 ## nvim
+* packer
 * ripgrep
 * lua
 
