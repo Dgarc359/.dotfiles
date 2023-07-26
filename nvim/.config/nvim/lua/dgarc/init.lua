@@ -1,3 +1,3 @@
 require("dgarc.remap")
-require("dgarc.plugins")
+require("dgarc.packer")
 require("dgarc.set")
