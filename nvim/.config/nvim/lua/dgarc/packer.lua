@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
+    use('numToStr/Comment.nvim')
 
 	use {
   		'VonHeikemen/lsp-zero.nvim',
@@ -58,6 +59,8 @@ return require('packer').startup(function(use)
     		{'hrsh7th/nvim-cmp'},     -- Required
     		{'hrsh7th/cmp-nvim-lsp'}, -- Required
     		{'L3MON4D3/LuaSnip'},     -- Required
+            { "rafamadriz/friendly-snippets" },
+            {'saadparwaiz1/cmp_luasnip'},
   	};
 
     use ('christoomey/vim-tmux-navigator');
