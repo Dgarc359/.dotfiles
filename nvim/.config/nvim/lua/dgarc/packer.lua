@@ -10,6 +10,21 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+    -- file structure
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+        'nvim-tree/nvim-web-devicons', -- optional
+        },
+        config = function()
+            require("nvim-tree").setup {
+                view = {
+                    width = 30,
+                },
+            }
+        end,
+    }
+
 	-- color scheme
 	use({
 		'rose-pine/neovim',
@@ -46,7 +61,7 @@ return require('packer').startup(function(use)
   	};
 
     use ('christoomey/vim-tmux-navigator');
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use { "catppuccin/nvim", as = "catppuccin" }}
 
-}
+
 end)
