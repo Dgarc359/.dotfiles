@@ -39,7 +39,11 @@ return require('packer').startup(function(use)
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
-    use('numToStr/Comment.nvim')
+    use{'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 
 	use {
   		'VonHeikemen/lsp-zero.nvim',
@@ -66,5 +70,23 @@ return require('packer').startup(function(use)
     use ('christoomey/vim-tmux-navigator');
     use { "catppuccin/nvim", as = "catppuccin" }}
 
+    -- nvim plugin dev LSP config
+    use { "folke/neodev.nvim" }
+
+    --[[ use {
+        'Dgarc359/simple-todo.nvim',
+        requires = {
+            { 'nvim-lua/plenary.nvim' },
+            { "kkharji/sqlite.lua" },
+        }
+    } ]]
+
+    use {
+        '~/Scratch/nvim/plugins/simple-todo',
+         requires = {
+            { 'nvim-lua/plenary.nvim' },
+            { "kkharji/sqlite.lua" },
+        }
+    }
 
 end)
