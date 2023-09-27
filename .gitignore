@@ -1,3 +1,4 @@
 *.log
 
 .tmux/
+packer_compiled.lua

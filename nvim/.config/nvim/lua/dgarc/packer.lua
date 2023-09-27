@@ -41,6 +41,15 @@ return require('packer').startup(function(use)
 	use('tpope/vim-fugitive')
     use('numToStr/Comment.nvim')
 
+    -- formatter
+    use {
+        'mhartington/formatter.nvim',
+        opts = {function()
+            return require "custom.configs.formatter"
+        end}
+    }
+
+    -- language server
 	use {
   		'VonHeikemen/lsp-zero.nvim',
   		branch = 'v2.x',
