@@ -49,6 +49,14 @@ return require('packer').startup(function(use)
         end}
     }
 
+    -- lsp diagnostics
+    use {
+        'folke/trouble.nvim',
+        requires = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {},
+    }
     -- language server
 	use {
   		'VonHeikemen/lsp-zero.nvim',
