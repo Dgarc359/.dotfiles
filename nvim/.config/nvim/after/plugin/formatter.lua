@@ -1,9 +1,17 @@
 local formatter = require("formatter.util")
 
+local GoConf = {
+    exe = "gofmt",
+    stdin = true,
+  }
 require"formatter".setup {
     logging = true,
     log_level = vim.log.levels.WARN,
     filetype = {
+        go = {
+            GoConf
+            -- require("formatter.filetypes.go").gofmt
+        },
         javascript = {
             require("formatter.filetypes.javascript").prettier
         },
