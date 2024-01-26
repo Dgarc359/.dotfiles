@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
 
 	-- fuzzy find files
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		-- branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
@@ -20,6 +20,11 @@ return require('packer').startup(function(use)
             require("nvim-tree").setup {
                 view = {
                     width = 30,
+                },
+                actions = {
+                    open_file = {
+                        quit_on_open = true,
+                    },
                 },
             }
         end,
