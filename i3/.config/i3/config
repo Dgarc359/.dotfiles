@@ -1,8 +1,13 @@
 # PERSONAL CONFIG SECTION
 
+# remove title bar
+# note: there may be some useability issues with this and stacking windows
+# TODO: investigate
 default_border pixel 0
 default_floating_border pixel 0
 
+gaps inner 10
+gaps horizontal 10
 
 # i3 config file (v4)
 #
