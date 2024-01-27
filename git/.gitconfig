@@ -3,3 +3,5 @@
 [user]
 	name = Dgarc359
 	email = 87497958+Dgarc359@user.noreply.github.com
+[push]
+    autoSetupRemote = true
