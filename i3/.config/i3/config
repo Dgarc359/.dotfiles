@@ -9,6 +9,7 @@ default_floating_border pixel 0
 gaps inner 10
 gaps horizontal 10
 
+
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -61,7 +62,7 @@ set $right semicolon
 floating_modifier Mod1
 
 # start a terminal
-bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod1+Return exec st -f "Liberation Mono:pixelsize=16"
 
 # kill focused window
 bindsym Mod1+Shift+q kill
