@@ -33,3 +33,21 @@ After you have stowed the nvim folder to your home directory, do the following:
 A tiling window manager
 
 > NOTE! The default ubuntu apt repository will not have the latest version of I3, It's recommended to have at least version 4.22, which merged in i3-gaps
+
+
+# Suckless Terminal | ^v0.9
+Terminal emulator
+
+## dependencies
+* xorg-dev (ubuntu)
+* libxft-dev (ubuntu)
+
+Installing suckless terminal is a simple process. Switch into a directory
+in which you are comfortable pulling down the source code
+in order to compile the application:
+
+```bash
+git clone https://git.suckless.org/st
+cd st
+make clean install # You may have to run as sudo
+```
