@@ -1,5 +1,7 @@
 # PERSONAL CONFIG SECTION
 
+# start picom service -- used for transparency
+exec --no-startup-id picom -b
 # remove title bar
 # note: there may be some useability issues with this and stacking windows
 # TODO: investigate
@@ -7,7 +9,15 @@ default_border pixel 0
 default_floating_border pixel 0
 
 gaps inner 10
-gaps horizontal 10
+gaps horizontal 15
+
+gaps vertical 15
+
+# start a terminal
+bindsym Mod1+Return exec st -A 0.75 -f "Liberation Mono:pixelsize=16"
+
+floating_minimum_size 300 x 300
+floating_maximum_size 800 x 500
 
 
 # i3 config file (v4)
@@ -60,9 +70,6 @@ set $right semicolon
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
-
-# start a terminal
-bindsym Mod1+Return exec st -f "Liberation Mono:pixelsize=16"
 
 # kill focused window
 bindsym Mod1+Shift+q kill

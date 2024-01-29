@@ -41,6 +41,7 @@ Terminal emulator
 ## dependencies
 * xorg-dev (ubuntu)
 * libxft-dev (ubuntu)
+* picom (if you want transparency)
 
 Installing suckless terminal is a simple process. Switch into a directory
 in which you are comfortable pulling down the source code
