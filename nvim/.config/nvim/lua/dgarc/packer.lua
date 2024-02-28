@@ -50,7 +50,7 @@ require('lazy').setup({
 		end
 	},
 
-	{'nvim-treesitter/nvim-treesitter', { build = ':TSUpdate' }},
+	{'nvim-treesitter/nvim-treesitter'},
 	'nvim-treesitter/playground',
 	'theprimeagen/harpoon',
 	'mbbill/undotree',
@@ -80,30 +80,19 @@ require('lazy').setup({
     'romgrk/barbar.nvim',
 
     -- language server
-	{
-  		'VonHeikemen/lsp-zero.nvim',
-  		branch = 'v2.x',
-  		dependencies = {
-    		-- LSP Support
-    			{'neovim/nvim-lspconfig'},             -- Required
-    			{                                      -- Optional
-      				'williamboman/mason.nvim',
-      				build = function()
-        			  pcall(vim.api.nvim_command, 'MasonUpdate')
-      				end,
-    			},
-    		{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-    		-- Autocompletion
-    		{'hrsh7th/nvim-cmp'},     -- Required
-    		{'hrsh7th/cmp-nvim-lsp'}, -- Required
-    		{'L3MON4D3/LuaSnip'},     -- Required
-        { "rafamadriz/friendly-snippets" },
-        {'saadparwaiz1/cmp_luasnip'},
-  	},
+    {
+      'williamboman/mason.nvim',
+      build = {function()
+          pcall(vim.api.nvim_command, 'MasonUpdate')
+      end},
+    },
+
+    'neovim/nvim-lspconfig',
+    'williamboman/mason-lspconfig.nvim',
 
     'christoomey/vim-tmux-navigator',
-    { "catppuccin/nvim", name = "catppuccin" }},
+    { "catppuccin/nvim", name = "catppuccin" },
 
 
 })
