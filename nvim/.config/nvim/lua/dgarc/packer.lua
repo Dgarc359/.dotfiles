@@ -1,19 +1,30 @@
-vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+require('lazy').setup({
+	'wbthomason/packer.nvim',
 
 	-- fuzzy find files
-	use {
+	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		-- branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+		dependencies = { {'nvim-lua/plenary.nvim'} }
+	},
 
     -- file structure
-    use {
+    {
         'nvim-tree/nvim-tree.lua',
-        requires = {
+        dependencies = {
         'nvim-tree/nvim-web-devicons', -- optional
         },
         config = function()
@@ -28,71 +39,60 @@ return require('packer').startup(function(use)
                 },
             }
         end,
-    }
+    },
 
 	-- color scheme
-	use({
+	{
 		'rose-pine/neovim',
-		as = 'rose-pine',
+		name = 'rose-pine',
 		config = function()
 			vim.cmd('colorscheme rose-pine')
 		end
-	})
+	},
 
-	use({'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }})
-	use('nvim-treesitter/playground')
-	use('theprimeagen/harpoon')
-	use('mbbill/undotree')
-	use('tpope/vim-fugitive')
-    use('numToStr/Comment.nvim')
+	{'nvim-treesitter/nvim-treesitter'},
+	'nvim-treesitter/playground',
+	'theprimeagen/harpoon',
+	'mbbill/undotree',
+	'tpope/vim-fugitive',
+  'numToStr/Comment.nvim',
 
     -- formatter
-    use {
+    {
         'mhartington/formatter.nvim',
         opts = {function()
             return require "custom.configs.formatter"
         end}
-    }
+    },
 
     -- lsp diagnostics
-    use {
+    {
         'folke/trouble.nvim',
-        requires = {
+        dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
         opts = {},
-    }
+    },
 
     -- tabs
-    use 'nvim-tree/nvim-web-devicons' -- OPTIONAL: for file icons
-    use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
-    use 'romgrk/barbar.nvim'
+    'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+    'romgrk/barbar.nvim',
 
     -- language server
-	use {
-  		'VonHeikemen/lsp-zero.nvim',
-  		branch = 'v2.x',
-  		requires = {
-    		-- LSP Support
-    			{'neovim/nvim-lspconfig'},             -- Required
-    			{                                      -- Optional
-      				'williamboman/mason.nvim',
-      				run = function()
-        			  pcall(vim.api.nvim_command, 'MasonUpdate')
-      				end,
-    			},
-    		{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-    		-- Autocompletion
-    		{'hrsh7th/nvim-cmp'},     -- Required
-    		{'hrsh7th/cmp-nvim-lsp'}, -- Required
-    		{'L3MON4D3/LuaSnip'},     -- Required
-            { "rafamadriz/friendly-snippets" },
-            {'saadparwaiz1/cmp_luasnip'},
-  	};
+    {
+      'williamboman/mason.nvim',
+      build = {function()
+          pcall(vim.api.nvim_command, 'MasonUpdate')
+      end},
+    },
 
-    use ('christoomey/vim-tmux-navigator');
-    use { "catppuccin/nvim", as = "catppuccin" }}
+    'neovim/nvim-lspconfig',
+    'williamboman/mason-lspconfig.nvim',
+
+    'christoomey/vim-tmux-navigator',
+    { "catppuccin/nvim", name = "catppuccin" },
 
 
-end)
+})

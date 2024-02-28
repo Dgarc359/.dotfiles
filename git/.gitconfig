@@ -1,7 +1,9 @@
 [init]
 	defaultBranch = main
 [user]
-	name = Dgarc359
+	name = dgarc359
 	email = 87497958+Dgarc359@user.noreply.github.com
 [push]
     autoSetupRemote = true
+[core]
+	editor = nvim
