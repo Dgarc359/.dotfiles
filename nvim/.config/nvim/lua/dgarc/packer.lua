@@ -91,7 +91,27 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     'williamboman/mason-lspconfig.nvim',
 
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    -- dap
+
+            "mfussenegger/nvim-dap",
+    {
+	"rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap"
+        },
+        config = function()
+            require('dapui').setup()
+        end,
+    },
+
+    "theHamsta/nvim-dap-virtual-text",
+
+    --
     'christoomey/vim-tmux-navigator',
+
+    -- theme
     { "catppuccin/nvim", name = "catppuccin" },
 
 
