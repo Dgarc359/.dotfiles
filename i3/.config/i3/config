@@ -12,7 +12,7 @@ gaps horizontal 15
 gaps vertical 15
 
 # start a terminal
-bindsym Mod1+Return exec kitty
+bindsym Mod1+Return exec urxvt
 
 floating_minimum_size 300 x 300
 floating_maximum_size 800 x 500

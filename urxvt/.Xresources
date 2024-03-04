@@ -38,7 +38,10 @@
 *.color15: #fdf6e3
 
 !! URxvt Appearance
-URxvt.font: xft:JetBrains Mono:size=11,xft:Monospace:size=9:antialias=true:hinting=true
+URxvt.font: xft:JetBrains Mono:pixelsize:18 \
+            xft:DejaVu Sans Mono:pixelsize:18,\
+            xft:Unifont:pixelsize:16, \
+            -*-unifont-*-*-*-*-*-*-*-*-*-*-*-*
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
@@ -49,5 +52,5 @@ URxvt.saveline: 2048
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
-URxvt.depth: 24
+URxvt.depth: 32
 URxvt.iso14755: false
