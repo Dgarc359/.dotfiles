@@ -1,0 +1,3 @@
+[submodule "binutils/src/node-twitch-chat-bin"]
+	path = binutils/src/node-twitch-chat-bin
+	url = https://github.com/Dgarc359/node-twitch-chat-bin
