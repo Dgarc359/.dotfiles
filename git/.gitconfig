@@ -4,6 +4,6 @@
 	name = dgarc359
 	email = 87497958+Dgarc359@users.noreply.github.com
 [push]
-    autoSetupRemote = true
+	autoSetupRemote = true
 [core]
 	editor = nvim
