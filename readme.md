@@ -3,6 +3,10 @@ Personal configurations for various different linux utilities and tools.
 Each configuration is modular, meaning that you can choose to use the nvim config, but not the
 i3 config, if you want. This is made possible with `stow` (make sure to install it!)
 
+> [!IMPORTANT]
+> Please make sure to clone recursively in order to pull any submodules
+> git clone --recurse-submodules ...
+
 
 # General Usage
 To pull the .dotfiles repo into your $HOME directory:
@@ -37,4 +41,3 @@ A tiling window manager
 
 # Kitty Terminal | ^v0.21.2
 Graphics accelerated Terminal emulator
-
