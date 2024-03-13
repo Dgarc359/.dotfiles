@@ -12,8 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-	'wbthomason/packer.nvim',
-
 	-- fuzzy find files
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
