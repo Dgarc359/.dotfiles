@@ -12,6 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+
+    -- text folding
+    { 'kevinhwang91/nvim-ufo', dependencies = { 'kevinhwang91/promise-async'}},
+
 	-- fuzzy find files
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.5',
