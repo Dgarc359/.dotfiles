@@ -95,16 +95,7 @@ require('lazy').setup({
     'hrsh7th/cmp-nvim-lsp',
     -- dap
 
-            "mfussenegger/nvim-dap",
-    {
-	"rcarriga/nvim-dap-ui",
-        dependencies = {
-            "mfussenegger/nvim-dap"
-        },
-        config = function()
-            require('dapui').setup()
-        end,
-    },
+    "mfussenegger/nvim-dap",
 
     "theHamsta/nvim-dap-virtual-text",
 
