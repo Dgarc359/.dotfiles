@@ -28,6 +28,7 @@ require('lazy').setup({
     {
         'nvim-tree/nvim-tree.lua',
         config = function()
+            -- config https://github.com/MarioCarrion/videos/blob/269956e913b76e6bb4ed790e4b5d25255cb1db4f/2023/01/nvim/lua/plugins/nvim-tree.lua
             require("nvim-tree").setup {
                 view = {
                     width = 30,
