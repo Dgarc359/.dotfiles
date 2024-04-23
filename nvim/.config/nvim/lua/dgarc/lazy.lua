@@ -122,9 +122,9 @@ require('lazy').setup({
 
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
-    -- dap
 
-            "mfussenegger/nvim-dap",
+    -- dap
+    "mfussenegger/nvim-dap",
     --{
 	--"rcarriga/nvim-dap-ui",
     --    dependencies = {
@@ -137,6 +137,16 @@ require('lazy').setup({
 
     "theHamsta/nvim-dap-virtual-text",
 
+    -- snippets
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp",
+        dependencies = { "rafamadriz/friendly-snippets" },
+    },
+    { 'saadparwaiz1/cmp_luasnip' },
     -- comments
     {
         "kkoomen/vim-doge",
