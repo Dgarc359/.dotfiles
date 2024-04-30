@@ -1,9 +1,10 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "rust_analyzer", "tsserver" },
+    ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "pyright" },
     automatic_installation = true,
 }
 local lspconfig = require('lspconfig')
+lspconfig.pyright.setup({})
 vim.o.foldcolumn = '1' -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
