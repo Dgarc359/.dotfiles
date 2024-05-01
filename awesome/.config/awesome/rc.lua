@@ -75,7 +75,6 @@ awful.layout.layouts = {
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
@@ -506,9 +505,9 @@ awful.rules.rules = {
         }
       }, properties = { floating = true }},
 
-    -- Add titlebars to normal clients and dialogs
+    -- Remove titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -584,4 +583,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- autostart applications
 awful.spawn.with_shell("compton") -- compositor
---awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("nitrogen --restore") -- wallpaper
