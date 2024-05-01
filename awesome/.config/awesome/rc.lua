@@ -314,6 +314,8 @@ globalkeys = gears.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
+    awful.key({ modkey, "Shift"   }, "t", function () awful.layout.set(awful.layout.suit.tile)end,
+              {description = "select tile layout", group = "layout"}),
 
     awful.key({ modkey, "Control" }, "n",
               function ()
