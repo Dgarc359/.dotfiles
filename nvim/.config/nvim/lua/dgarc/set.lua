@@ -1,7 +1,6 @@
 -- line numbers
 vim.opt.nu = true
 --vim.opt.relativenumber = true
-
 -- indent handling
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

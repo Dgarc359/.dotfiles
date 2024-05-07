@@ -18,6 +18,9 @@ require"formatter".setup {
         typescript = {
             require("formatter.filetypes.typescript").prettier
         },
+        lua = {
+            require("formatter.filetypes.lua").stylua
+        },
         ["*"] = {
             require("formatter.filetypes.any").remove_trailing_whitespace
         }
