@@ -1,12 +1,14 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "pyright" },
+	ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "pyright" },
 	automatic_installation = true,
 })
-local lspconfig = require("lspconfig")
-lspconfig.pyright.setup({})
+--local lspconfig = require("lspconfig")
+local vim_lsp = vim.lsp
+-- lspconfig.pyright.setup({})
+vim_lsp.config("pyright", {})
 
-vim.o.foldcolumn = "1" -- '0' is not bad
+vim.opt.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
@@ -21,16 +23,17 @@ capabilities.textDocument.foldingRange = {
 	lineFoldingOnly = true,
 }
 
-lspconfig.lua_ls.setup({
-	capabilities = capabilities,
+vim_lsp.config("lua_ls", {
+    capabilities = capabilities
 })
-lspconfig.tsserver.setup({})
-lspconfig.rust_analyzer.setup({
-	-- Server-specific settings. See `:help lspconfig-setup`
-	settings = {
-		["rust-analyzer"] = {},
-	},
+vim_lsp.config("ts_ls", {})
+vim_lsp.config("rust_analyzer", {
+    settings = {
+        ["rust-analyzer"] = {}
+    }
 })
+
+vim.lsp.enable({ "pyright", "lua_ls", "rust_analyzer", "ts_ls" })
 
 require("ufo").setup()
 local statuscol = require("statuscol.builtin")
